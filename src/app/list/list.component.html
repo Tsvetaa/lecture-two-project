@@ -1,10 +1,13 @@
 <p>{{myProp}}</p>
 <h1>The users of this world are:</h1>
+
 <ul id="list-container">
     <li *ngFor="let user of users" class="list-item">
-        <app-list-item [user]="user" [showPhoneNumber]="showPhoneNumber"></app-list-item>
+        <app-list-item [user]="user" [showPhoneNumber]="showPhoneNumber"
+        (customEvent)="customEventHandler($event)"></app-list-item>
     </li>
 </ul>
+
 <button (click)="handleClickEvent()">
     {{showPhoneNumber ? 'Hide Phone Numbers' : 'Show Phone Numbers'}}
 </button>

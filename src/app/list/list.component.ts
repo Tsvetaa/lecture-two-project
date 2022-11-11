@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ICustomEvent } from '../list-item/list-item.component';
 
 @Component({
   selector: 'app-list',
@@ -20,6 +21,8 @@ export class ListComponent {
     }
   ];
 
+  selectedUserIndex: null | number = null; 
+
   showPhoneNumber = false; 
 
   myProp = "Hello World!";
@@ -32,6 +35,10 @@ export class ListComponent {
 
   handleClickEvent() {
     this.showPhoneNumber = !this.showPhoneNumber;
+  }
+
+  customEventHandler($event: ICustomEvent) {
+    console.log($event);
   }
 
 }
